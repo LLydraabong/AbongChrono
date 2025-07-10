@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World Clock Pro</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Loader (Mascot) -->
+  <div id="loader-bg">
+    <svg class="mascot-loader" viewBox="0 0 120 120" fill="none">
+      <circle cx="60" cy="60" r="54" fill="#fff" opacity="0.16"/>
+      <ellipse cx="60" cy="60" rx="46" ry="46" fill="url(#a)"/>
+      <ellipse cx="60" cy="60" rx="34" ry="34" fill="#fff" opacity="0.15"/>
+      <g>
+        <ellipse cx="60" cy="67" rx="22" ry="18" fill="#1de9b6"/>
+        <ellipse cx="60" cy="70" rx="12" ry="6" fill="#fff" opacity="0.5"/>
+      </g>
+      <g>
+        <ellipse cx="47" cy="55" rx="5" ry="7" fill="#fff"/>
+        <ellipse cx="73" cy="55" rx="5" ry="7" fill="#fff"/>
+        <ellipse cx="47" cy="56" rx="2.5" ry="2.2" fill="#1de9b6"/>
+        <ellipse cx="73" cy="56" rx="2.5" ry="2.2" fill="#1de9b6"/>
+      </g>
+      <path d="M50 75 Q60 85 70 75" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="a" x1="20" y1="20" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#1de9b6"/>
+          <stop offset="1" stop-color="#283e51"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <div class="loader-text">Loading World Clock Pro...</div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <span class="app-logo">
+      <!-- Header logo -->
+      <svg width="54" height="54" viewBox="0 0 120 120" fill="none">
+        <ellipse cx="60" cy="60" rx="46" ry="46" fill="url(#a)"/>
+        <g>
+          <ellipse cx="47" cy="55" rx="5" ry="7" fill="#fff"/>
+          <ellipse cx="73" cy="55" rx="5" ry="7" fill="#fff"/>
+          <ellipse cx="47" cy="56" rx="2.5" ry="2.2" fill="#1de9b6"/>
+          <ellipse cx="73" cy="56" rx="2.5" ry="2.2" fill="#1de9b6"/>
+        </g>
+        <defs>
+          <linearGradient id="a" x1="20" y1="20" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1de9b6"/>
+            <stop offset="1" stop-color="#283e51"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </span>
+    <h1>World Clock Pro</h1>
+    <div class="subtitle">Global timekeeping for professionals — Powered by Llydra Abong</div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="top-bar">
+      <div class="search-bar">
+        <input type="text" placeholder="Search a city..." id="search" onkeyup="filterClocks()" />
+      </div>
+    </div>
+
+    <div class="clock-grid" id="clock-container">
+      <!-- Clock cards will be generated here -->
+    </div>
+  </div>
+  <!-- Videos Section -->
+  <div class="video-container">
+    <h2>Explore Our Featured Videos</h2>
+    <div class="video-list">
+      <video controls poster="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80">
+        <source src="example-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video controls poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80">
+        <source src="example-video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video controls poster="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80">
+        <source src="example-video3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- Ad Section -->
+  <div class="ad-section">
+    <h2>Sponsored</h2>
+    <p>Find the best world clocks at <a href="https://examplewatchstore.com" target="_blank">Example Watch Store</a>!</p>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+<script src="script.js"></script>
+<!-- Control Panel -->
+<div class="control-panel" id="control-panel">
+  <button onclick="toggleTheme()">🌓 Theme</button>
+  <button onclick="toggleMap()">🗺️ Map View</button>
+  <button onclick="toggleDetails()">📷 City Details</button>
+  </div>
+  <!-- City Info Modal -->
+<div class="city-modal" id="city-modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <h2 id="modal-city-name">City Name</h2>
+    <img id="modal-city-image" src="" alt="City Image" />
+    <p><strong>Timezone:</strong> <span id="modal-city-tz"></span></p>
+    <p><strong>Fun Fact:</strong> <em>Coming soon from AI!</em></p>
+  </div>
+  </div>
+  <!-- Map Section -->
+<div class="map-wrapper" id="map-wrapper">
+  <h2>World City Map</h2>
+  <div id="map" style="height: 400px; border-radius: 12px;"></div>
+        </div>
+        <div class="control-bar">
+  <!-- Existing toggle buttons... -->
+          <div class="video-container section-fade">...</div>
+<div class="ad-section section-fade">...</div>
+<div class="map-wrapper section-fade">...</div>
+<button onclick="toggleTheme()">🌓 Theme</button>
+<!-- Slide Panel -->
+<div id="city-sidebar" class="city-sidebar">
+  <div class="sidebar-header">
+    <span id="close-sidebar" title="Close">&times;</span>
+    <h3 id="sidebar-title">City Info</h3>
+  </div>
+  <div class="sidebar-tabs">
+    <button class="tab-btn active" onclick="showTab('info')">📝 Info</button>
+    <button class="tab-btn" onclick="showTab('weather')">☁️ Weather</button>
+    <button class="tab-btn" onclick="showTab('map')">🗺️ Map</button>
+  </div>
+  <div id="sidebar-content">
+    <div id="tab-info" class="tab-section"></div>
+    <div id="tab-weather" class="tab-section" style="display:none;"></div>
+    <div id="tab-map" class="tab-section" style="display:none;">
+      <div id="city-map" style="height: 200px;"></div>
+    </div>
+  </div>
+      </div>
+      <!-- City Info Sidebar -->
+<div id="city-info-panel" class="city-info">
+  <button class="close-btn" onclick="closeCityInfo()">×</button>
+  <div class="modal-content">
+    <h2 id="city-name">City Name</h2>
+    <p id="city-timezone">Timezone: --</p>
+    <div id="city-ai-info">
+      <p>Loading info...</p>
+    </div>
+  </div>
+      </div>
+      <!-- Leaflet.js CDN -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<div id="sidebar" class="sidebar">
+  <button class="close-btn" onclick="closeSidebar()">✖</button>
+  <div class="tab-btns">
+    <button onclick="switchTab('info')">📊 Info</button>
+    <button onclick="switchTab('photos')">📷 Photos</button>
+    <button onclick="switchTab('favorite')">⭐ Favorite</button>
+  </div>
+  <div id="tab-info" class="tab-content active"></div>
+  <div id="tab-photos" class="tab-content"></div>
+  <div id="tab-favorite" class="tab-content"></div>
+    </div>
+    <button onclick="switchTab('map')">🗺️ Map</button>
+    <div id="tab-map" class="tab-content">
+  <div id="map" style="height: 250px; border-radius: 8px;"></div>
+    </div>
+    <div class="ai-panel" id="ai-panel">
+  <div class="ai-header">🧠 World Clock Assistant</div>
+  <div class="ai-log" id="ai-log">
+    <div class="ai-msg ai-msg-bot">Hi! Ask me about timezones, cities or world clocks.</div>
+  </div>
+  <div class="ai-input-bar">
+    <input type="text" id="ai-input" placeholder="Ask me anything..." />
+    <button onclick="sendAI()">Send</button>
+  </div>
+      </div>
+      <img src="https://flagcdn.com/48x36/us.png" alt="flag" />
+      <button id="installBtn" style="position:fixed;bottom:20px;right:20px;">Install App</button>
+      <link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#1de9b6" />
+</body>
+</html>

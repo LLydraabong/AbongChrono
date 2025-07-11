@@ -809,3 +809,10 @@ function filterByRegion() {
   ${entry.city}
 </div>
 <div class="city-title">${entry.city}</div>
+fetch('cities.json')
+  .then(res => res.json())
+    .then(data => {
+        cities = data;
+            renderClocks();
+                updateClock();
+                  });
